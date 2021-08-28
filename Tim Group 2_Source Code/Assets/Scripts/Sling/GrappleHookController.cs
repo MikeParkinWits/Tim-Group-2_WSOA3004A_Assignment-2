@@ -19,7 +19,6 @@ public class GrappleHookController : MonoBehaviour
 
 
     [Header("Player Variables")]
-    public float climbSpeed = 3f;
     [Range(0.0f, 1.0f)]
     public float facingDirDistanceFromPlayer = 0.5f;
     [Range(0.0f, 1.0f)]
@@ -70,12 +69,6 @@ public class GrappleHookController : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// Figures out the closest Polygon collider vertex to a specified Raycast2D hit point in order to assist in 'rope wrapping'
-    /// </summary>
-    /// <param name="hit">The raycast2d hit</param>
-    /// <param name="polyCollider">the reference polygon collider 2D</param>
-    /// <returns></returns>
     private Vector2 GetClosestColliderPointFromRaycastHit(RaycastHit2D hit, PolygonCollider2D polyCollider)
     {
         // Transform polygoncolliderpoints to world space (default is local)
@@ -196,15 +189,10 @@ public class GrappleHookController : MonoBehaviour
         }
 
         UpdateSlingPositions();
-        HandleSlingLength();
         HandleInput(aimDir, controlTypeDown, controlTypeUp);
         HandleSlingUnwrap();
     }
 
-    /// <summary>
-    /// Handles input within the RopeSystem component
-    /// </summary>
-    /// <param name="aimDirection">The current direction for aiming based on mouse position</param>
     private void HandleInput(Vector2 aimDirection, bool inputDown, bool inputUp)
     {
 
@@ -225,8 +213,6 @@ public class GrappleHookController : MonoBehaviour
                 slingAnchorAttached = true;
                 if (!slingWrapPositions.Contains(hit.point))
                 {
-                    // Jump slightly to distance the player a little from the ground after grappling to something.
-
 
                     if (slingWrapPositions.Count == 0)
                     {
@@ -257,9 +243,6 @@ public class GrappleHookController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Resets the rope in terms of gameplay, visual, and supporting variable values.
-    /// </summary>
     private void ResetSling()
     {
         slingSpringJoint.enabled = false;
@@ -271,11 +254,6 @@ public class GrappleHookController : MonoBehaviour
         wrapPointsDictionary.Clear();
         slingHingeAnchorSprite.enabled = false;
     }
-
-    /// <summary>
-    /// Move the aiming crosshair based on aim angle
-    /// </summary>
-    /// <param name="aimAngle">The mouse aiming angle</param>
     private void SetFacingDirSpritePosition(float aimAngle)
     {
         if (!dirIndicatorSprite.enabled)
@@ -290,24 +268,6 @@ public class GrappleHookController : MonoBehaviour
         dirIndicator.transform.position = facingDirSprite;
     }
 
-    /// <summary>
-    /// Retracts or extends the 'rope'
-    /// </summary>
-    private void HandleSlingLength()
-    {
-        if (Input.GetAxis("Vertical") >= 1f && slingAnchorAttached && !isColliding)
-        {
-            slingSpringJoint.distance -= Time.deltaTime * climbSpeed;
-        }
-        else if (Input.GetAxis("Vertical") < 0f && slingAnchorAttached)
-        {
-            slingSpringJoint.distance += Time.deltaTime * climbSpeed;
-        }
-    }
-
-    /// <summary>
-    /// Handles updating of the rope hinge and anchor points based on objects the rope can wrap around. These must be PolygonCollider2D physics objects.
-    /// </summary>
     private void UpdateSlingPositions()
     {
         if (slingAnchorAttached)
