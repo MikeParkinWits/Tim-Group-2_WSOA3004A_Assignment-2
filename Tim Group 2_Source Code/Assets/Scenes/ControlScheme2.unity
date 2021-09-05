@@ -859,7 +859,7 @@ MonoBehaviour:
   speed: 2
   cameraDepth: -10
   minX: -19
-  minY: 1
+  minY: -100
   maxX: 13
   maxY: 100
 --- !u!81 &990199447

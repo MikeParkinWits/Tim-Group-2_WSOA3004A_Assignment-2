@@ -135,7 +135,7 @@ public class GrappleHookController : MonoBehaviour
             }
             else
             {
-                aimAngle += Time.deltaTime * 3f;
+                aimAngle += Time.deltaTime * 6f;
             }
 
             Debug.Log(aimAngle);
@@ -198,7 +198,7 @@ public class GrappleHookController : MonoBehaviour
 
         bool name = Input.GetMouseButton(0);
 
-        if (inputDown)
+        if (Input.touchCount > 0)
         {
             if (slingAnchorAttached)
             {
@@ -226,7 +226,7 @@ public class GrappleHookController : MonoBehaviour
                     wrapPointsDictionary.Add(hit.point, 0);
                     //slingSpringJoint.distance = Vector2.Distance(playerPos, hit.point);
                     slingSpringJoint.enabled = true;
-                    slingHingeAnchorSprite.enabled = true;
+                    //slingHingeAnchorSprite.enabled = true;
                 }
             }
             else
@@ -237,7 +237,7 @@ public class GrappleHookController : MonoBehaviour
             }
         }
 
-        if (inputUp)
+        if (Input.touchCount <= 0)
         {
             ResetSling();
         }
