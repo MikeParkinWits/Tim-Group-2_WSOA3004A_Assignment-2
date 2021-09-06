@@ -227,7 +227,7 @@ public class GrappleHookController : MonoBehaviour
 
         }
 
-        if (inputDown)
+        if (inputDown && !GameManagerMike.isPause)
         {
 
             if (slingAnchorAttached)
@@ -279,7 +279,7 @@ public class GrappleHookController : MonoBehaviour
         }
 
 
-        if (inputUp)
+        if (inputUp && !GameManagerMike.isPause)
         {
             ResetSling();
         }
@@ -307,7 +307,11 @@ public class GrappleHookController : MonoBehaviour
         float facingSpriteY = transform.position.y + facingDirDistanceFromPlayer * Mathf.Sin(aimAngle);
 
         Vector3 facingDirSprite = new Vector3(facingSpriteX, facingSpriteY, 0);
-        dirIndicator.transform.position = facingDirSprite;
+
+        if (!GameManagerMike.isPause)
+        {
+            dirIndicator.transform.position = facingDirSprite;
+        }
     }
 
     private void UpdateSlingPositions()
