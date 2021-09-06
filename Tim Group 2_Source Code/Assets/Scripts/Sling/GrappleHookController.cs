@@ -209,13 +209,15 @@ public class GrappleHookController : MonoBehaviour
 
         bool name = Input.GetMouseButton(0);
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && slingAnchorAttached)
         {
-            if (dist > halfDist)
-            {
-                slingSpringJoint.distance = dist / 1.005f;
-                dist = slingSpringJoint.distance;
-            }
+                if (dist > halfDist)
+                {
+                    slingSpringJoint.distance = dist / 1.007f;
+                    dist = slingSpringJoint.distance;
+                }
+            
+
 
             
             Mathf.Lerp(0f, dist, 0.5f);
