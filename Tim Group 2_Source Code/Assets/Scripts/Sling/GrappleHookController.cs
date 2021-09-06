@@ -250,7 +250,7 @@ public class GrappleHookController : MonoBehaviour
                         dist = Vector2.Distance(playerPos, hit.point) - (Vector2.Distance(playerPos, hit.point) * (slingPercentageBounce + gameObject.GetComponent<Rigidbody2D>().velocity.magnitude) / 100);
                         slingSpringJoint.distance = (dist);
 
-                        halfDist = dist / 1.5f;
+                        halfDist = dist / 2f;
 
                         Debug.Log("Distance: " + Mathf.Lerp(0f, 1f, 0.1f));
                         //slingSpringJoint.frequency = 1;
