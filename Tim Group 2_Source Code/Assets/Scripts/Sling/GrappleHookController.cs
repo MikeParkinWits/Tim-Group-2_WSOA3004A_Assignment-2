@@ -348,7 +348,7 @@ public class GrappleHookController : MonoBehaviour
                         slingHingeAnchorRb.transform.position = slingPos;
                         if (!distanceSet)
                         {
-                            slingSpringJoint.distance = Vector2.Distance(transform.position, slingPos);
+                            //slingSpringJoint.distance = Vector2.Distance(transform.position, slingPos);
                             distanceSet = true;
                         }
                     }
