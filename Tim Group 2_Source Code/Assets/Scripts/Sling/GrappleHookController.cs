@@ -250,7 +250,7 @@ public class GrappleHookController : MonoBehaviour
                         dist = Vector2.Distance(playerPos, hit.point) - (Vector2.Distance(playerPos, hit.point) * (slingPercentageBounce + gameObject.GetComponent<Rigidbody2D>().velocity.magnitude) / 100);
                         slingSpringJoint.distance = (dist);
 
-                        halfDist = dist / 1.75f;
+                        halfDist = dist / 1.5f;
 
                         Debug.Log("Distance: " + Mathf.Lerp(0f, 1f, 0.1f));
                         //slingSpringJoint.frequency = 1;
@@ -326,7 +326,7 @@ public class GrappleHookController : MonoBehaviour
                             slingHingeAnchorRb.transform.position = slingPos;
                             if (!distanceSet)
                             {
-                                //slingSpringJoint.distance = Vector2.Distance(transform.position, ropePosition);
+                                slingSpringJoint.distance = Vector2.Distance(transform.position, slingPos);
                                 distanceSet = true;
                             }
                         }
@@ -348,7 +348,7 @@ public class GrappleHookController : MonoBehaviour
                         slingHingeAnchorRb.transform.position = slingPos;
                         if (!distanceSet)
                         {
-                            //slingSpringJoint.distance = Vector2.Distance(transform.position, slingPos);
+                            slingSpringJoint.distance = Vector2.Distance(transform.position, slingPos);
                             distanceSet = true;
                         }
                     }
