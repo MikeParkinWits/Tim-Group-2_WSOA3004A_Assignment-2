@@ -9,7 +9,8 @@ public class GrappleHookController : MonoBehaviour
     public LayerMask slingAttachLayerMask;
     public int layerNum;
     public float maxSlingDistance = 20f;
-    public float dist = 0f;
+    private float dist = 0f;
+    private float halfDist = 0f;
     [Range(0, 100)]
     public int slingPercentageBounce = 25;
     private LineRenderer slingLineRenderer;
@@ -210,12 +211,15 @@ public class GrappleHookController : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-                slingSpringJoint.distance = dist / 1.01f;
+            if (dist > halfDist)
+            {
+                slingSpringJoint.distance = dist / 1.005f;
                 dist = slingSpringJoint.distance;
+            }
 
-                Mathf.Lerp(0f, dist, 0.5f);
+            
+            Mathf.Lerp(0f, dist, 0.5f);
 
-                Debug.Log("Distance: " + Mathf.Lerp(0f, 1f, 0.1f));
             
 
         }
@@ -245,6 +249,10 @@ public class GrappleHookController : MonoBehaviour
                     {
                         dist = Vector2.Distance(playerPos, hit.point) - (Vector2.Distance(playerPos, hit.point) * (slingPercentageBounce + gameObject.GetComponent<Rigidbody2D>().velocity.magnitude) / 100);
                         slingSpringJoint.distance = (dist);
+
+                        halfDist = dist / 1.6f;
+
+                        Debug.Log("Distance: " + Mathf.Lerp(0f, 1f, 0.1f));
                         //slingSpringJoint.frequency = 1;
                     }
 
