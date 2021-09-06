@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEditor;
 
 public class GrappleHookController : MonoBehaviour
 {
     [Header("Sling Variables")]
     public LayerMask slingAttachLayerMask;
+    public int layerNum;
     public float maxSlingDistance = 20f;
+    public float dist = 0f;
     [Range(0, 100)]
     public int slingPercentageBounce = 25;
     private LineRenderer slingLineRenderer;
@@ -66,7 +69,14 @@ public class GrappleHookController : MonoBehaviour
         this.gameObject.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
 
         Debug.Log(controlTypeDown + "" + controlTypeUp);
+    }
 
+    private void OnDrawGizmos()
+    {
+        Debug.Log("works");
+        Vector2 origin = transform.position;
+        Handles.color = Color.red;
+        Handles.DrawWireDisc(origin, new Vector3(0, 0, 1), maxSlingDistance);
     }
 
     private Vector2 GetClosestColliderPointFromRaycastHit(RaycastHit2D hit, PolygonCollider2D polyCollider)
@@ -198,7 +208,19 @@ public class GrappleHookController : MonoBehaviour
 
         bool name = Input.GetMouseButton(0);
 
-        if (Input.touchCount > 0)
+        if (Input.GetMouseButton(0))
+        {
+                slingSpringJoint.distance = dist / 1.01f;
+                dist = slingSpringJoint.distance;
+
+                Mathf.Lerp(0f, dist, 0.5f);
+
+                Debug.Log("Distance: " + Mathf.Lerp(0f, 1f, 0.1f));
+            
+
+        }
+
+        if (inputDown)
         {
             if (slingAnchorAttached)
             {
@@ -208,7 +230,12 @@ public class GrappleHookController : MonoBehaviour
             slingLineRenderer.enabled = true;
 
             RaycastHit2D hit = Physics2D.Raycast(playerPos, aimDirection, maxSlingDistance, slingAttachLayerMask);
-            if (hit.collider != null)
+
+            Debug.Log("Layer: " + hit.transform.gameObject.layer);
+
+
+            
+            if (hit.collider != null && hit.transform.gameObject.layer == layerNum)
             {
                 slingAnchorAttached = true;
                 if (!slingWrapPositions.Contains(hit.point))
@@ -216,8 +243,9 @@ public class GrappleHookController : MonoBehaviour
 
                     if (slingWrapPositions.Count == 0)
                     {
-                        slingSpringJoint.distance = (Vector2.Distance(playerPos, hit.point) - (Vector2.Distance(playerPos, hit.point) * (slingPercentageBounce + gameObject.GetComponent<Rigidbody2D>().velocity.magnitude)/100));
-                        slingSpringJoint.frequency = 1;
+                        dist = Vector2.Distance(playerPos, hit.point) - (Vector2.Distance(playerPos, hit.point) * (slingPercentageBounce + gameObject.GetComponent<Rigidbody2D>().velocity.magnitude) / 100);
+                        slingSpringJoint.distance = (dist);
+                        //slingSpringJoint.frequency = 1;
                     }
 
 
@@ -235,9 +263,10 @@ public class GrappleHookController : MonoBehaviour
                 slingAnchorAttached = false;
                 slingSpringJoint.enabled = false;
             }
+        
         }
 
-        if (Input.touchCount <= 0)
+        if (inputUp)
         {
             ResetSling();
         }
