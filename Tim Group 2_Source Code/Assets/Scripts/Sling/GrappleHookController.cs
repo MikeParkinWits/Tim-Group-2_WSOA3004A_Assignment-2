@@ -7,6 +7,7 @@ public class GrappleHookController : MonoBehaviour
 {
     [Header("Sling Variables")]
     public LayerMask slingAttachLayerMask;
+    public LayerMask slingAttachLayerMaskTwo;
     public int layerNum;
     public float maxSlingDistance = 20f;
     private float dist = 0f;
@@ -177,7 +178,7 @@ public class GrappleHookController : MonoBehaviour
 	        if (slingWrapPositions.Count > 0)
 	        {
 	            Vector2 lastSlingPoint = slingWrapPositions.Last();
-                RaycastHit2D playerToLastHit = Physics2D.Raycast(playerPos, (lastSlingPoint - playerPos).normalized, Vector2.Distance(playerPos, lastSlingPoint) - 0.1f, slingAttachLayerMask);
+                RaycastHit2D playerToLastHit = Physics2D.Raycast(playerPos, (lastSlingPoint - playerPos).normalized, Vector2.Distance(playerPos, lastSlingPoint) - 0.1f, slingAttachLayerMaskTwo);
                 if (playerToLastHit)
                 {
                     PolygonCollider2D colliderWithVertices = playerToLastHit.collider as PolygonCollider2D;
@@ -228,6 +229,7 @@ public class GrappleHookController : MonoBehaviour
 
         if (inputDown)
         {
+
             if (slingAnchorAttached)
             {
                 return;
@@ -275,6 +277,7 @@ public class GrappleHookController : MonoBehaviour
             }
         
         }
+
 
         if (inputUp)
         {
