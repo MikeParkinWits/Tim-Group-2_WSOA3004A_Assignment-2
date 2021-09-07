@@ -70,12 +70,12 @@ public class GrappleHookController : MonoBehaviour
 
         this.gameObject.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
 
-        Debug.Log(controlTypeDown + "" + controlTypeUp);
+        //Debug.Log(controlTypeDown + "" + controlTypeUp);
     }
 
     private void OnDrawGizmos()
     {
-        Debug.Log("works");
+        //Debug.Log("works");
         Vector2 origin = transform.position;
         Handles.color = Color.red;
         Handles.DrawWireDisc(origin, new Vector3(0, 0, 1), maxSlingDistance);
@@ -150,7 +150,7 @@ public class GrappleHookController : MonoBehaviour
                 aimAngle += Time.deltaTime * 6f;
             }
 
-            Debug.Log(aimAngle);
+            //Debug.Log(aimAngle);
         }
 
         this.gameObject.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
@@ -160,7 +160,7 @@ public class GrappleHookController : MonoBehaviour
             aimAngle = Mathf.PI * 2 + aimAngle;
         }
 
-        Debug.Log(aimAngle);
+        //Debug.Log(aimAngle);
 
         Vector3 aimDir = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
 
@@ -239,7 +239,7 @@ public class GrappleHookController : MonoBehaviour
 
             RaycastHit2D hit = Physics2D.Raycast(playerPos, aimDirection, maxSlingDistance, slingAttachLayerMask);
 
-            Debug.Log("Layer: " + hit.transform.gameObject.layer);
+            //Debug.Log("Layer: " + hit.transform.gameObject.layer);
 
 
             
@@ -256,7 +256,7 @@ public class GrappleHookController : MonoBehaviour
 
                         halfDist = dist / 1.75f;
 
-                        Debug.Log("Distance: " + Mathf.Lerp(0f, 1f, 0.1f));
+                       //Debug.Log("Distance: " + Mathf.Lerp(0f, 1f, 0.1f));
                         //slingSpringJoint.frequency = 1;
                     }
 
