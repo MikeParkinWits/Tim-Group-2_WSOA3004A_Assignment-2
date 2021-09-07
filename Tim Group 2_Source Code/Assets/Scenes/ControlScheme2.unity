@@ -3091,10 +3091,6 @@ PrefabInstance:
       propertyPath: gravityScale
       value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 3662495750161836888, guid: 3ad9a7581813f41478c4cfaa3fa8fa2a, type: 3}
-      propertyPath: slingAttachLayerMaskTwo.m_Bits
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3662495750161836890, guid: 3ad9a7581813f41478c4cfaa3fa8fa2a, type: 3}
       propertyPath: m_Name
       value: Player

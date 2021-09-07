@@ -489,8 +489,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slingAttachLayerMask:
     serializedVersion: 2
-    m_Bits: 5
-  layerNum: 0
+    m_Bits: 68
+  slingAttachLayerMaskTwo:
+    serializedVersion: 2
+    m_Bits: 64
+  layerNum: 6
   maxSlingDistance: 12
   slingPercentageBounce: 20
   facingDirDistanceFromPlayer: 0.4

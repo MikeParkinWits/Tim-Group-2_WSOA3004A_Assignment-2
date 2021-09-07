@@ -8,15 +8,19 @@ using UnityEngine.UI;
 public class GameManagerMike : MonoBehaviour
 {
 
+    [Header("Inspector Variables")]
     public GameObject pauseMenu;
+    public GameObject topBar;
+
+    [Header("Timer Variables")]
     public GameObject timerScreen;
     public Text timerText;
-    public GameObject topBar;
+    private float timer = 3f;
+    private bool loadTimer = false;
+
     public static bool isPause = false;
 
-    private float timer = 3f;
 
-    private bool loadTimer = false;
 
     // Start is called before the first frame update
     void Start()
