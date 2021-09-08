@@ -51,8 +51,7 @@ MonoBehaviour:
   - {fileID: 4720311010369194243, guid: 0d0138026bb3eaf4187ae55423400b52, type: 3}
   Templates:
   - {fileID: 3021820601962476401}
-  - {fileID: 3021820601962476401}
-  - {fileID: 3021820601962476401}
+  playerObject: {fileID: 0}
   levelLayer:
     serializedVersion: 2
     m_Bits: 128
