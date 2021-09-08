@@ -453,7 +453,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3546059258531532153}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1634418528872309890}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: UnMuteBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2331950278095211045
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +930,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3389185100706434847}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1634418528872309890}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: MuteBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5167283765637540621
 GameObject:
   m_ObjectHideFlags: 0
@@ -3475,6 +3499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15387f6b37ebda7438cf00da9bd6567c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  muteGameobject: {fileID: 2231027790777121943}
+  unMuteGameobject: {fileID: 5087484954861119515}
 --- !u!82 &3719683900765988600
 AudioSource:
   m_ObjectHideFlags: 0
