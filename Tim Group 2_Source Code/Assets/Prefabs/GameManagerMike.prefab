@@ -1418,7 +1418,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 6959458175207965658}
         m_TargetAssemblyTypeName: GameManagerMike, Assembly-CSharp
-        m_MethodName: OnPause
+        m_MethodName: OnQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
