@@ -27,6 +27,7 @@ public class GameManagerMike : MonoBehaviour
     {
         Time.timeScale = 1;
         loadTimer = false;
+        isPause = false;
     }
 
     // Update is called once per frame
