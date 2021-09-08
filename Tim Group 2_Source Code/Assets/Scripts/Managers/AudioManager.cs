@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
 
     public void UnMuteBackground()
     {
-        mainGameBackgroundMusic.volume = 0.5f;
+        mainGameBackgroundMusic.volume = 0.4f;
 
         unMuteGameobject.SetActive(true);
         muteGameobject.SetActive(false);
