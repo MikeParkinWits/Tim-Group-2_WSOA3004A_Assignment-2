@@ -447,4 +447,8 @@ public class GrappleHookController : MonoBehaviour
     {
         isColliding = false;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        AudioManager.bounceAudio.Play();
+    }
 }

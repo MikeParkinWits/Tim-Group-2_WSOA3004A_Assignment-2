@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-    public static AudioSource clickAudio, attachAudio, detachAudio, mainGameBackgroundMusic, highScoreAudio;
+    public static AudioSource clickAudio, attachAudio, detachAudio, mainGameBackgroundMusic, highScoreAudio, bounceAudio;
 
     public GameObject muteGameobject;
     public GameObject unMuteGameobject;
@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
         detachAudio = audioSources[2];
         mainGameBackgroundMusic = audioSources[3];
         highScoreAudio = audioSources[4];
+        bounceAudio = audioSources[5];
     }
 
     public void MuteBackground()
