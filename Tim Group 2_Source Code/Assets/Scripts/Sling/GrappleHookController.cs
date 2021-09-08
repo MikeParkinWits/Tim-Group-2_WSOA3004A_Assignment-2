@@ -256,6 +256,8 @@ public class GrappleHookController : MonoBehaviour
 
                         halfDist = dist / 1.75f;
 
+                        AudioManager.attachAudio.Play();
+
                        //Debug.Log("Distance: " + Mathf.Lerp(0f, 1f, 0.1f));
                         //slingSpringJoint.frequency = 1;
                     }
