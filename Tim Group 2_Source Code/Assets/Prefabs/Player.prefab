@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1955142135068718005
 Transform:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 3662495750161836892}
   - component: {fileID: 3662495750161836881}
   - component: {fileID: 3662495750161836895}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ MonoBehaviour:
   maxSlingDistance: 12
   slingPercentageBounce: 20
   facingDirDistanceFromPlayer: 0.4
-  gravityScale: 0.3
+  gravityScale: 0.4
   multiButtonMouseControls: 0
   leftMouseControl: 1
   keyboardAndMouseControls: 0
@@ -612,7 +612,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 6.5
+  m_Mass: 5
   m_LinearDrag: 0.1
   m_AngularDrag: 0.05
   m_GravityScale: 0.7
@@ -922,7 +922,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6703708224981872553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.554024, y: 5.4251885, z: 27.361362}
+  m_LocalPosition: {x: -5.554024, y: 5.95, z: 27.361362}
   m_LocalScale: {x: 3.5124233, y: 0.08834351, z: 0.41090003}
   m_Children: []
   m_Father: {fileID: 1955142135068718005}
@@ -1057,7 +1057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7236944324362268073}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalPosition: {x: 0, y: 9, z: -100}
   m_LocalScale: {x: 20, y: 20, z: 10}
   m_Children:
   - {fileID: 1955142135068718005}
@@ -1074,7 +1074,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0.019607844}
+  m_BackGroundColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0.019607844}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
