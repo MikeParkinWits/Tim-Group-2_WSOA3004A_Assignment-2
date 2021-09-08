@@ -32,7 +32,7 @@ public class TemplateSpawner : MonoBehaviour
         Debug.Log(Vector3.Distance(transform.position, playerObject.transform.position));
         if (Vector3.Distance(transform.position,playerObject.transform.position)>100) {
           
-            Destroy(this.gameObject);
+           // Destroy(this.gameObject);
         }
     }
    // Physics.CheckSphere(transform.position + sightRangeOffset, sightRange, playerLayer);
