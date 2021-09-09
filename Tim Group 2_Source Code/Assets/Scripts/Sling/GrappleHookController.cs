@@ -30,6 +30,7 @@ public class GrappleHookController : MonoBehaviour
     public float facingDirDistanceFromPlayer = 0.5f;
     [Range(0.0f, 1.0f)]
     public float gravityScale = 0.75f;
+    public Rigidbody2D playerRB;
     private Transform dirIndicator;
     private SpriteRenderer dirIndicatorSprite;
     private Vector2 playerPos;
@@ -48,9 +49,13 @@ public class GrappleHookController : MonoBehaviour
     private bool distanceSet;
     private bool isColliding;
     private Dictionary<Vector2, int> wrapPointsDictionary = new Dictionary<Vector2, int>();
+    private float timerTut;
+    private bool tutCanShow = true;
 
     [Header("Public Instantiations")]
     public Button pauseButton;
+
+    public int score;
 
     void Awake ()
     {
@@ -76,6 +81,8 @@ public class GrappleHookController : MonoBehaviour
         this.gameObject.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
 
         //Debug.Log(controlTypeDown + "" + controlTypeUp);
+
+        score = 0;
     }
 
     private void OnDrawGizmos()
@@ -108,7 +115,34 @@ public class GrappleHookController : MonoBehaviour
     // Update is called once per frame
     void Update ()
 	{
+
+        //Debug.Log("Velocity: " + playerRB.velocity.magnitude);
+
+        if (playerRB.velocity.magnitude > 1.5f)
+        {
+            score += ((int)(playerRB.velocity.magnitude * (Time.deltaTime * 20)));
+        }
+
+        //Debug.Log("Velocity: " + score);
+
+
         Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+
+        if (PlayerPrefs.GetInt("TutPlayed") == 0 && !UI_SceneManager.showTut && tutCanShow)
+        {
+
+            if (timerTut < 5f)
+            {
+                timerTut += Time.deltaTime;
+            }
+            else
+            {
+                UI_SceneManager.showTut = true;
+
+                PlayerPrefs.SetInt("TutPlayed", 1);
+            }
+            
+        }
 
         if (multiButtonMouseControls)
         {
@@ -235,9 +269,27 @@ public class GrappleHookController : MonoBehaviour
         if (inputDown && !GameManagerMike.isPause)
         {
 
+            tutCanShow = false;
+
             if (EventSystem.current.IsPointerOverGameObject())
             {
-                return;
+                if (EventSystem.current.currentSelectedGameObject.name == "PauseBtn")
+                {
+
+                    //Debug.Log("Name: " + EventSystem.current.currentSelectedGameObject.name);
+
+                    return;
+                }
+
+
+                //if (EventSystem.current.currentSelectedGameObject.gameObject != null)
+                //{
+                //    if (EventSystem.current.currentSelectedGameObject.name == "PauseBtn")
+                //    {
+                //        Debug.Log("YEAH");
+                //        return;
+                //    }
+                //}
             }
 
             if (slingAnchorAttached)
@@ -460,5 +512,11 @@ public class GrappleHookController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         AudioManager.bounceAudio.Play();
+
+        if (PlayerPrefs.GetInt("HighScore") < score)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+        }
+        score = 0;
     }
 }

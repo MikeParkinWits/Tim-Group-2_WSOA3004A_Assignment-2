@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class UI_SceneManager : MonoBehaviour
 {
     public GameObject tutorial_Text;
+
+    public static bool showTut = false;
 
     void Start()
     {
@@ -14,7 +17,15 @@ public class UI_SceneManager : MonoBehaviour
 
     public void Update()
     {
-        StartCoroutine(tutorialText());
+        if (showTut)
+        {
+            tutorial_Text.SetActive(true);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartCoroutine(tutorialText());
+            }
+        }
     }
 
     public IEnumerator tutorialText()
