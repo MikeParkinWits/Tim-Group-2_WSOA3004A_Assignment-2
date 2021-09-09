@@ -497,7 +497,7 @@ MonoBehaviour:
   layerNum: 6
   maxSlingDistance: 12
   slingPercentageBounce: 20
-  facingDirDistanceFromPlayer: 0.4
+  facingDirDistanceFromPlayer: 0.25
   gravityScale: 0.4
   multiButtonMouseControls: 0
   leftMouseControl: 1
