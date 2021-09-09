@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3204d8515e6c77c49bb9e8a44332e87f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorial_Text: {fileID: 0}
+  tutorial_Text: {fileID: 1370129220}
 --- !u!4 &808176641
 Transform:
   m_ObjectHideFlags: 0
@@ -716,6 +716,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d0138026bb3eaf4187ae55423400b52, type: 3}
+--- !u!1 &1370129220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7042753360307097461, guid: 7093f9557c111564f8d660c9d0ddbaca, type: 3}
+  m_PrefabInstance: {fileID: 6959458173566606015}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1375539445
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +963,10 @@ PrefabInstance:
     - target: {fileID: 6959458175207965659, guid: 7093f9557c111564f8d660c9d0ddbaca, type: 3}
       propertyPath: m_Name
       value: GameManagerMike
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042753360307097461, guid: 7093f9557c111564f8d660c9d0ddbaca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7093f9557c111564f8d660c9d0ddbaca, type: 3}

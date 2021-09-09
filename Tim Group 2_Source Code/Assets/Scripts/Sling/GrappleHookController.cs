@@ -2,6 +2,8 @@
 using UnityEngine;
 using System.Linq;
 using UnityEditor;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GrappleHookController : MonoBehaviour
 {
@@ -46,6 +48,9 @@ public class GrappleHookController : MonoBehaviour
     private bool distanceSet;
     private bool isColliding;
     private Dictionary<Vector2, int> wrapPointsDictionary = new Dictionary<Vector2, int>();
+
+    [Header("Public Instantiations")]
+    public Button pauseButton;
 
     void Awake ()
     {
@@ -229,6 +234,11 @@ public class GrappleHookController : MonoBehaviour
 
         if (inputDown && !GameManagerMike.isPause)
         {
+
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
 
             if (slingAnchorAttached)
             {

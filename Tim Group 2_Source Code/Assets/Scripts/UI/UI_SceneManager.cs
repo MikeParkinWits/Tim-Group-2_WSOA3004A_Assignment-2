@@ -20,7 +20,7 @@ public class UI_SceneManager : MonoBehaviour
     public IEnumerator tutorialText()
     {
         yield return new WaitForSeconds(7f);
-       // tutorial_Text.SetActive(false);
+        tutorial_Text.SetActive(false);
     }
 
     public void controlSchemeSelector()
