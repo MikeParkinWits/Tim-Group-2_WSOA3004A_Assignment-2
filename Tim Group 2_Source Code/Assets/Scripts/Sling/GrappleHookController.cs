@@ -118,7 +118,7 @@ public class GrappleHookController : MonoBehaviour
 
         //Debug.Log("Velocity: " + playerRB.velocity.magnitude);
 
-        if (playerRB.velocity.magnitude > 1.5f)
+        if (playerRB.velocity.magnitude > 1f)
         {
             score += ((int)(playerRB.velocity.magnitude * (Time.deltaTime * 20)));
         }
