@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -11,12 +12,16 @@ public class MenuManager : MonoBehaviour
     private bool creditsLoaded = false;
     public GameObject creditsScreen;
 
+    public Text highScoreText;
+
     // Start is called before the first frame update
     void Start()
     {
         creditsLoaded = false;
 
         Time.timeScale = 1;
+
+        highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString("0");
     }
 
     // Update is called once per frame

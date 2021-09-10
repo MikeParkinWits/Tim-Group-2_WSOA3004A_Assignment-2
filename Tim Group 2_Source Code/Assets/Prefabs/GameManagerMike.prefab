@@ -2662,8 +2662,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b90c61ed5ee8874ebacae6ed6ed89f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colour: 0
   pauseMenu: {fileID: 6959458174561823892}
   topBar: {fileID: 6959458175393001022}
+  highScoreText: {fileID: 5889922569011082806}
+  currentScoreText: {fileID: 1223633483179409440}
   timerScreen: {fileID: 6959458173464158141}
   timerText: {fileID: 6959458174161873949}
 --- !u!1 &6959458175214767243

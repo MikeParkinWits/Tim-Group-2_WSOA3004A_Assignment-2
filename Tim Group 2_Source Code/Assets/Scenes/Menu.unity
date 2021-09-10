@@ -1339,8 +1339,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b90c61ed5ee8874ebacae6ed6ed89f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colour: 0
   pauseMenu: {fileID: 0}
   topBar: {fileID: 0}
+  highScoreText: {fileID: 0}
+  currentScoreText: {fileID: 0}
   timerScreen: {fileID: 0}
   timerText: {fileID: 0}
 --- !u!4 &1181928238
@@ -1833,6 +1836,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 1879442083}
   ball: {fileID: 1879442078}
   creditsScreen: {fileID: 590538381}
+  highScoreText: {fileID: 879011473}
 --- !u!4 &1616286954
 Transform:
   m_ObjectHideFlags: 0
