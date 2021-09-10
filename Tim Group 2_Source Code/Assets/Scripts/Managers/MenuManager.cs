@@ -15,6 +15,8 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         creditsLoaded = false;
+
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
