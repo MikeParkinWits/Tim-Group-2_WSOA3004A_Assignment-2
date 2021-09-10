@@ -143,7 +143,8 @@ public class TemplateSpawner : MonoBehaviour
 
     }
     void Despawn() {
-        for (int i = 0; i < listCounter-1; i++) {
+
+       /* for (int i = 0; i < listCounter-1; i++) {
             if (TemplatesAttached != null)
             {
 
@@ -156,7 +157,7 @@ public class TemplateSpawner : MonoBehaviour
            
         
         }
-    
+    */
     }
     private void OnDrawGizmosSelected()
     {
