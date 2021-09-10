@@ -273,7 +273,7 @@ public class GrappleHookController : MonoBehaviour
 
             if (EventSystem.current.IsPointerOverGameObject())
             {
-                if (EventSystem.current.currentSelectedGameObject.name == "PauseBtn")
+                if (EventSystem.current.currentSelectedGameObject.name == "PauseBtn" || EventSystem.current.currentSelectedGameObject.name == "RestartBtn")
                 {
 
                     //Debug.Log("Name: " + EventSystem.current.currentSelectedGameObject.name);
