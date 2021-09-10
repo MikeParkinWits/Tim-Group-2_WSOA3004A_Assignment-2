@@ -2811,6 +2811,7 @@ MonoBehaviour:
   topBar: {fileID: 6959458175393001022}
   highScoreText: {fileID: 5889922569011082806}
   currentScoreText: {fileID: 1223633483179409440}
+  pauseHighScoreText: {fileID: 4944268702159378302}
   timerScreen: {fileID: 6959458173464158141}
   timerText: {fileID: 6959458174161873949}
 --- !u!1 &6959458175214767243

@@ -14,6 +14,7 @@ public class GameManagerMike : MonoBehaviour
     public GameObject topBar;
     public Text highScoreText;
     public Text currentScoreText;
+    public Text pauseHighScoreText;
 
     [Header("Timer Variables")]
     public GameObject timerScreen;
@@ -48,6 +49,7 @@ public class GameManagerMike : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", GrappleHookController.score);
             highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString("0");
+            pauseHighScoreText.text = PlayerPrefs.GetInt("HighScore").ToString("0");
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
