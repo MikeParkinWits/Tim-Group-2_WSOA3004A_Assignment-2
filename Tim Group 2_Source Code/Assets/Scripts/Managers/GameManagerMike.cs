@@ -30,13 +30,11 @@ public class GameManagerMike : MonoBehaviour
     public Color[] RedPallete = { new Color(255, 0, 0, 255)};
     public Color[] GreenPallete = { new Color(193, 255, 28, 255)};
     public Color[] BluePallete = { new Color(141, 189, 255, 255)};
-
-
     public Color[] OrangePallete = { new Color(255, 175, 122, 255)};
 
     private void Awake()
     {
-        colour = Random.Range(0, 3);
+        colour = Random.Range(0, 4);
         highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString("0");
 
         playerTrailRenderer = GameObject.FindGameObjectWithTag("Player").GetComponent<TrailRenderer>();
@@ -56,6 +54,8 @@ public class GameManagerMike : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log(Random.Range(0, 4));
 
         currentScoreText.text = GrappleHookController.score.ToString("0");
 
@@ -115,9 +115,7 @@ public class GameManagerMike : MonoBehaviour
                 break;
 
             default:
-                //   this.gameObject.GetComponent<Renderer>().material.color = BluePallete[Random.Range(0, 4)];
-                //  transform.GetComponent<Renderer>().material.color = BluePallete[Random.Range(0, 4)];
-                gameObject.GetComponent<Renderer>().material.SetColor("_Color", BluePallete[Random.Range(0, 4)]);
+                ChangeTrailRenderer(BluePallete[0]);
 
                 ChangeTrailRenderer(BluePallete[0]);
 
