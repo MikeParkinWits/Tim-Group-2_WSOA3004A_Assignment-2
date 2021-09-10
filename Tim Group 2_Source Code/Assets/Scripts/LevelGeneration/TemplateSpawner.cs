@@ -32,7 +32,7 @@ public class TemplateSpawner : MonoBehaviour
 
             LevelSpawn();
         }
-        Debug.Log(Vector3.Distance(transform.position, playerObject.transform.position));
+      //  Debug.Log(Vector3.Distance(transform.position, playerObject.transform.position));
         if (Vector3.Distance(transform.position,playerObject.transform.position)>100) {
             Despawn();
             if (TemplatesAttached==null) { }
@@ -143,10 +143,17 @@ public class TemplateSpawner : MonoBehaviour
 
     }
     void Despawn() {
-        for (int i = 1; i < listCounter-1; i++) {
-            if (TemplatesAttached[i]!=null) {
-                Destroy(TemplatesAttached[i]);
+        for (int i = 0; i < listCounter-1; i++) {
+            if (TemplatesAttached != null)
+            {
+
+                if (TemplatesAttached[i] != null)
+                {
+                    Destroy(TemplatesAttached[i]);
+                }
             }
+            else { }
+           
         
         }
     
