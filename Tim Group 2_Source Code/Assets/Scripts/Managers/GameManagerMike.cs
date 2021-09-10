@@ -14,6 +14,7 @@ public class GameManagerMike : MonoBehaviour
     public GameObject topBar;
     public Text highScoreText;
     public Text currentScoreText;
+    public Text pauseHighScoreText;
 
     [Header("Timer Variables")]
     public GameObject timerScreen;
@@ -23,10 +24,24 @@ public class GameManagerMike : MonoBehaviour
 
     public static bool isPause = false;
 
+    public TrailRenderer playerTrailRenderer;
+
+    [Header("Colours")]
+    public Color[] RedPallete = { new Color(255, 0, 0, 255)};
+    public Color[] GreenPallete = { new Color(193, 255, 28, 255)};
+    public Color[] BluePallete = { new Color(141, 189, 255, 255)};
+
+
+    public Color[] OrangePallete = { new Color(255, 175, 122, 255)};
+
     private void Awake()
     {
         colour = Random.Range(0, 3);
         highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString("0");
+
+        playerTrailRenderer = GameObject.FindGameObjectWithTag("Player").GetComponent<TrailRenderer>();
+
+        ColourChecker();
     }
 
     // Start is called before the first frame update
@@ -48,6 +63,7 @@ public class GameManagerMike : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", GrappleHookController.score);
             highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString("0");
+            pauseHighScoreText.text = PlayerPrefs.GetInt("HighScore").ToString("0");
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -63,6 +79,61 @@ public class GameManagerMike : MonoBehaviour
         {
             timerScreen.SetActive(false);
         }
+    }
+
+    public void ColourChecker()
+    {
+        switch (colour)
+        {
+            case 0:
+                // this.gameObject.GetComponent<Renderer>().material.color= RedPallete[Random.Range(0, 4)];
+                //  transform.GetComponent<Renderer>().material.color = RedPallete[Random.Range(0, 4)];
+
+                ChangeTrailRenderer(RedPallete[0]);
+
+                break;
+            case 1:
+                //this.gameObject.GetComponent<Renderer>().material.color = GreenPallete[Random.Range(0, 4)];
+                //   transform.GetComponent<Renderer>().material.color = GreenPallete[Random.Range(0, 4)];
+
+                ChangeTrailRenderer(GreenPallete[0]);
+                break;
+            case 2:
+                // this.gameObject.GetComponent<Renderer>().material.color = BluePallete[Random.Range(0, 4)];
+                //  transform.GetComponent<Renderer>().material.color = BluePallete[Random.Range(0, 4)];
+
+                ChangeTrailRenderer(BluePallete[0]);
+
+                break;
+
+            case 3:
+                // this.gameObject.GetComponent<Renderer>().material.color = OrangePallete[Random.Range(0, 4)];
+                //  transform.GetComponent<Renderer>().material.color =OrangePallete[Random.Range(0, 4)];
+
+                ChangeTrailRenderer(OrangePallete[0]);
+
+                break;
+
+            default:
+                //   this.gameObject.GetComponent<Renderer>().material.color = BluePallete[Random.Range(0, 4)];
+                //  transform.GetComponent<Renderer>().material.color = BluePallete[Random.Range(0, 4)];
+                gameObject.GetComponent<Renderer>().material.SetColor("_Color", BluePallete[Random.Range(0, 4)]);
+
+                ChangeTrailRenderer(BluePallete[0]);
+
+                break;
+        }
+    }
+
+    public void ChangeTrailRenderer(Color color)
+    {
+        float alpha = 1.0f;
+        Gradient gradient = new Gradient();
+        gradient.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(color, 0.0f), new GradientColorKey(Color.white, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(0.0f, 1.0f) }
+        );
+        playerTrailRenderer.colorGradient = gradient;
     }
 
     public void OnPause()
