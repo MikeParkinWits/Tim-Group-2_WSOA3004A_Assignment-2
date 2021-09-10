@@ -55,7 +55,7 @@ public class GrappleHookController : MonoBehaviour
     [Header("Public Instantiations")]
     public Button pauseButton;
 
-    public int score;
+    public static int score;
 
     void Awake ()
     {
