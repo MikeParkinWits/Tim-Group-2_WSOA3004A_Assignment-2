@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3964717671367347484}
   - component: {fileID: 135627219421672232}
   - component: {fileID: 5770126893168395429}
+  - component: {fileID: -9116501453969302897}
   m_Layer: 6
   m_Name: 29
   m_TagString: Untagged
@@ -183,3 +184,40 @@ PolygonCollider2D:
       - {x: 1.62, y: -2.49}
       - {x: 1.8199999, y: -2.46}
       - {x: 1.9699999, y: -2.4199998}
+--- !u!114 &-9116501453969302897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340641663131877608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eea14ffc36555743942f6cd08a83147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+  RedPallete:
+  - {r: 0.60784316, g: 0, b: 0, a: 1}
+  - {r: 0.70980394, g: 0, b: 0, a: 1}
+  - {r: 0.76470596, g: 0, b: 0, a: 1}
+  - {r: 0.8352942, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  GreenPallete:
+  - {r: 0.227451, g: 0.6392157, b: 0.27450982, a: 1}
+  - {r: 0.34509805, g: 0.73333335, b: 0.26666668, a: 1}
+  - {r: 0.47058827, g: 0.8235295, b: 0.2392157, a: 1}
+  - {r: 0.60784316, g: 0.91372555, b: 0.19215688, a: 1}
+  - {r: 0.7568628, g: 1, b: 0.10980393, a: 1}
+  BluePallete:
+  - {r: 0.15294118, g: 0.427451, b: 0.7960785, a: 1}
+  - {r: 0.23137257, g: 0.49411768, b: 0.85098046, a: 1}
+  - {r: 0.28627452, g: 0.57254905, b: 0.9450981, a: 1}
+  - {r: 0.3921569, g: 0.6313726, b: 0.9568628, a: 1}
+  - {r: 0.5529412, g: 0.7411765, b: 1, a: 1}
+  OrangePallete:
+  - {r: 1, g: 0.40000004, b: 0, a: 1}
+  - {r: 1, g: 0.47058827, b: 0.121568635, a: 1}
+  - {r: 1, g: 0.54509807, b: 0.2392157, a: 1}
+  - {r: 1, g: 0.6156863, b: 0.36078432, a: 1}
+  - {r: 1, g: 0.6862745, b: 0.4784314, a: 1}
