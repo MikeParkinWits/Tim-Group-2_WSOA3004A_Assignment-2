@@ -2832,13 +2832,13 @@ MonoBehaviour:
   timerText: {fileID: 6959458174161873949}
   playerTrailRenderer: {fileID: 0}
   RedPallete:
-  - {r: 255, g: 0, b: 0, a: 255}
+  - {r: 0.735849, g: 0, b: 0, a: 255}
   GreenPallete:
   - {r: 0.5686275, g: 0.7490196, b: 0.08235294, a: 1}
   BluePallete:
   - {r: 0.41568628, g: 0.5568628, b: 0.7490196, a: 1}
   OrangePallete:
-  - {r: 0.7490196, g: 0.5176471, b: 0.36078432, a: 1}
+  - {r: 0.9056604, g: 0.4697973, b: 0.17429687, a: 1}
 --- !u!1 &6959458175214767243
 GameObject:
   m_ObjectHideFlags: 0
