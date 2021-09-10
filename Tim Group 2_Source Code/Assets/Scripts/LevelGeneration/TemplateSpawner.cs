@@ -34,9 +34,10 @@ public class TemplateSpawner : MonoBehaviour
         }
       //  Debug.Log(Vector3.Distance(transform.position, playerObject.transform.position));
         if (Vector3.Distance(transform.position,playerObject.transform.position)>100) {
-            Despawn();
-            if (TemplatesAttached==null) { }
+           // Despawn();
             Destroy(this.gameObject);
+           
+            
         }
     }
    // Physics.CheckSphere(transform.position + sightRangeOffset, sightRange, playerLayer);
@@ -144,20 +145,19 @@ public class TemplateSpawner : MonoBehaviour
     }
     void Despawn() {
 
-       /* for (int i = 0; i < listCounter-1; i++) {
-            if (TemplatesAttached != null)
-            {
+        for (int i = 1; i < listCounter-1; i++) {
+            
 
                 if (TemplatesAttached[i] != null)
                 {
                     Destroy(TemplatesAttached[i]);
                 }
-            }
+            
             else { }
            
         
         }
-    */
+    
     }
     private void OnDrawGizmosSelected()
     {
