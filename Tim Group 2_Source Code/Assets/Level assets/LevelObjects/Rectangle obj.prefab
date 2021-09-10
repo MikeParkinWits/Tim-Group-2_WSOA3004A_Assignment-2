@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4363669982759095615}
   - component: {fileID: 4363669982759095614}
   - component: {fileID: 4363669982759095585}
-  - component: {fileID: -1530839224020775774}
-  m_Layer: 0
+  - component: {fileID: 6650728263101589802}
+  m_Layer: 6
   m_Name: Rectangle obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4363669982759095587}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.1799, y: 6.81, z: 0}
-  m_LocalScale: {x: 1.8125, y: 1, z: 1}
+  m_LocalScale: {x: 0.40180263, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -135,7 +135,7 @@ PolygonCollider2D:
       - {x: -2.56, y: -2.56}
       - {x: 2.56, y: -2.56}
       - {x: 2.56, y: 2.56}
---- !u!114 &-1530839224020775774
+--- !u!114 &6650728263101589802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
