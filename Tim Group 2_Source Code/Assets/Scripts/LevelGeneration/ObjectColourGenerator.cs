@@ -26,30 +26,30 @@ public class ObjectColourGenerator : MonoBehaviour
             case 0:
                // this.gameObject.GetComponent<Renderer>().material.color= RedPallete[Random.Range(0, 4)];
               //  transform.GetComponent<Renderer>().material.color = RedPallete[Random.Range(0, 4)];
-              gameObject.GetComponent<Renderer>().material.SetColor("_Color", RedPallete[Random.Range(0, 4)]);
+              gameObject.GetComponent<Renderer>().material.SetColor("_Color", RedPallete[Random.Range(0, 5)]);
    
                 break;
             case 1:
                 //this.gameObject.GetComponent<Renderer>().material.color = GreenPallete[Random.Range(0, 4)];
-                gameObject.GetComponent<Renderer>().material.SetColor("_Color", GreenPallete[Random.Range(0, 4)]);
+                gameObject.GetComponent<Renderer>().material.SetColor("_Color", GreenPallete[Random.Range(0, 5)]);
                 //   transform.GetComponent<Renderer>().material.color = GreenPallete[Random.Range(0, 4)];
                 break;
             case 2:
                // this.gameObject.GetComponent<Renderer>().material.color = BluePallete[Random.Range(0, 4)];
-                gameObject.GetComponent<Renderer>().material.SetColor("_Color", BluePallete[Random.Range(0, 4)]);
+                gameObject.GetComponent<Renderer>().material.SetColor("_Color", BluePallete[Random.Range(0, 5)]);
                 //  transform.GetComponent<Renderer>().material.color = BluePallete[Random.Range(0, 4)];
                 break;
 
             case 3:
                // this.gameObject.GetComponent<Renderer>().material.color = OrangePallete[Random.Range(0, 4)];
-                gameObject.GetComponent<Renderer>().material.SetColor("_Color", OrangePallete[Random.Range(0, 4)]);
+                gameObject.GetComponent<Renderer>().material.SetColor("_Color", OrangePallete[Random.Range(0, 5)]);
                 //  transform.GetComponent<Renderer>().material.color =OrangePallete[Random.Range(0, 4)];
                 break;
 
             default:
              //   this.gameObject.GetComponent<Renderer>().material.color = BluePallete[Random.Range(0, 4)];
                 //  transform.GetComponent<Renderer>().material.color = BluePallete[Random.Range(0, 4)];
-                gameObject.GetComponent<Renderer>().material.SetColor("_Color", BluePallete[Random.Range(0, 4)]);
+                gameObject.GetComponent<Renderer>().material.SetColor("_Color", BluePallete[Random.Range(0, 5)]);
                 break;
         }
 
