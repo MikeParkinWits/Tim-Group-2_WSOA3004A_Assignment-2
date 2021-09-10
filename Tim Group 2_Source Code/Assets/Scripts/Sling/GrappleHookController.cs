@@ -34,6 +34,7 @@ public class GrappleHookController : MonoBehaviour
     private Transform dirIndicator;
     private SpriteRenderer dirIndicatorSprite;
     private Vector2 playerPos;
+    public GameObject player;
 
     [Header("Control Options")]
     public bool multiButtonMouseControls;
@@ -89,8 +90,8 @@ public class GrappleHookController : MonoBehaviour
     {
         //Debug.Log("works");
         Vector2 origin = transform.position;
-        Handles.color = Color.red;
-        Handles.DrawWireDisc(origin, new Vector3(0, 0, 1), maxSlingDistance);
+        //Handles.color = Color.red;
+        //Handles.DrawWireDisc(origin, new Vector3(0, 0, 1), maxSlingDistance);
     }
 
     private Vector2 GetClosestColliderPointFromRaycastHit(RaycastHit2D hit, PolygonCollider2D polyCollider)
@@ -118,7 +119,7 @@ public class GrappleHookController : MonoBehaviour
 
         //Debug.Log("Velocity: " + playerRB.velocity.magnitude);
 
-        if (playerRB.velocity.magnitude > 1.5f)
+        if (playerRB.velocity.magnitude > 1f)
         {
             score += ((int)(playerRB.velocity.magnitude * (Time.deltaTime * 20)));
         }
@@ -273,7 +274,7 @@ public class GrappleHookController : MonoBehaviour
 
             if (EventSystem.current.IsPointerOverGameObject())
             {
-                if (EventSystem.current.currentSelectedGameObject.name == "PauseBtn")
+                if (EventSystem.current.currentSelectedGameObject.name == "PauseBtn" || EventSystem.current.currentSelectedGameObject.name == "RestartBtn")
                 {
 
                     //Debug.Log("Name: " + EventSystem.current.currentSelectedGameObject.name);
@@ -376,6 +377,11 @@ public class GrappleHookController : MonoBehaviour
         {
             dirIndicator.transform.position = facingDirSprite;
         }
+
+        Vector3 mouseScreen = Input.mousePosition;
+        Vector3 mouse = Camera.main.ScreenToWorldPoint(mouseScreen);
+
+        dirIndicator.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(player.transform.position.y, player.transform.position.x) * Mathf.Rad2Deg - 90);
     }
 
     private void UpdateSlingPositions()
