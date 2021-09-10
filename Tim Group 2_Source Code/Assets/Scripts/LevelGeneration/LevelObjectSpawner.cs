@@ -17,7 +17,12 @@ public class LevelObjectSpawner : MonoBehaviour
      
         int rand = Random.Range(0, objects.Length);
       var newTemp= Instantiate(objects[rand], transform.position,Quaternion.Euler(0,0,Random.Range(0,360)));
-      newTemp.transform.parent = this.transform;
+        if (newTemp!=null) 
+        {
+
+            newTemp.transform.parent = this.transform;
+        }
+  
        // playerObject = GameObject.FindGameObjectWithTag("Player");
        
     }
