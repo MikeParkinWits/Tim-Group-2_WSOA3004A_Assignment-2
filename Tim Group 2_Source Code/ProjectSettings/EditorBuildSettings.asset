@@ -18,21 +18,18 @@ EditorBuildSettings:
     path: Assets/Scenes/ControlScheme1.unity
     guid: d0f402b960c999b488b2f2820975518a
   - enabled: 0
-    path: Assets/Scenes/ControlScheme3.unity
-    guid: df35e2638c55a1c469644a2e6a8febd1
-  - enabled: 0
     path: Assets/Scenes/ControlScheme2.unity
     guid: 07af7077f130df545b838d384e57aed4
   - enabled: 0
+    path: Assets/Scenes/ControlScheme3.unity
+    guid: df35e2638c55a1c469644a2e6a8febd1
+  - enabled: 0
     path: Assets/Scenes/ControlScheme4.unity
     guid: 915734d818fa33f44b34d3081c9bf083
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelTest.unity
     guid: ab44d916a3a1c5543bbad784b5072b28
   - enabled: 1
     path: Assets/Scenes/Working Test Scene.unity
     guid: 80f846c6aa69aa84ea4c58d5293d1e50
-  - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: 44c7b506f878f694d87c81bf6ab744b1
   m_configObjects: {}

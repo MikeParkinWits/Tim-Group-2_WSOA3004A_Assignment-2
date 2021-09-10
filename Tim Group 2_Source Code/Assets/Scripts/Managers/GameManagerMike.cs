@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GameManagerMike : MonoBehaviour
 {
+    public int colour; 
 
     [Header("Inspector Variables")]
     public GameObject pauseMenu;
@@ -20,11 +21,16 @@ public class GameManagerMike : MonoBehaviour
 
     public static bool isPause = false;
 
+    private void Awake()
+    {
+        colour = Random.Range(0, 3);
 
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        
         Time.timeScale = 1;
         loadTimer = false;
         isPause = false;
