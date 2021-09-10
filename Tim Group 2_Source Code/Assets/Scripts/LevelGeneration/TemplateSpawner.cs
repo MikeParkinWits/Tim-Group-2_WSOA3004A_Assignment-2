@@ -11,6 +11,9 @@ public class TemplateSpawner : MonoBehaviour
     public GameObject playerObject;
     public static bool queriesHitTriggers;
     public LayerMask levelLayer;
+    public int listCounter=0;
+    public List<GameObject>TemplatesAttached=new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,7 @@ public class TemplateSpawner : MonoBehaviour
         
         int rand = Random.Range(0, objects.Length);
        var newTemp= Instantiate(objects[rand], transform.position, Quaternion.identity);
-       // newTemp.transform.parent = this.transform;
+       //newTemp.transform.parent = this.transform;
         playerObject = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -29,10 +32,11 @@ public class TemplateSpawner : MonoBehaviour
 
             LevelSpawn();
         }
-        Debug.Log(Vector3.Distance(transform.position, playerObject.transform.position));
+      //  Debug.Log(Vector3.Distance(transform.position, playerObject.transform.position));
         if (Vector3.Distance(transform.position,playerObject.transform.position)>100) {
-          
-           // Destroy(this.gameObject);
+            Despawn();
+            if (TemplatesAttached==null) { }
+            Destroy(this.gameObject);
         }
     }
    // Physics.CheckSphere(transform.position + sightRangeOffset, sightRange, playerLayer);
@@ -86,42 +90,49 @@ public class TemplateSpawner : MonoBehaviour
       */
         if (!Physics2D.BoxCast(transform.position + new Vector3(25.5f, 0, 0), new Vector2(10f, 10f), 0f, Vector2.down, 10f, levelLayer))
         {
-            Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(25.5f, 0, 0), Quaternion.identity);
-
+            TemplatesAttached.Add(Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(25.5f, 0, 0), Quaternion.identity));
+            listCounter++;
         }
         if (!Physics2D.BoxCast(transform.position + new Vector3(25.5f, 25.5f, 0), new Vector2(10f, 10f), 0f, Vector2.down, 10f, levelLayer))
         {
-            Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(25.5f, 25.5f, 0), Quaternion.identity);
+            listCounter++;
+            TemplatesAttached.Add( Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(25.5f, 25.5f, 0), Quaternion.identity));
 
         }
         if (!Physics2D.BoxCast(transform.position + new Vector3(25.5f, -25.5f, 0), new Vector2(10f, 10f), 0f, Vector2.down, 10f, levelLayer))
         {
-            Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(25.5f, -25.5f, 0), Quaternion.identity);
+            listCounter++;
+            TemplatesAttached.Add(Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(25.5f, -25.5f, 0), Quaternion.identity));
 
         }
         if (!Physics2D.BoxCast(transform.position + new Vector3(-25.5f, 0, 0), new Vector2(10f, 10f), 0f, Vector2.down, 10f, levelLayer))
         {
-            Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(-25.5f, 0, 0), Quaternion.identity);
+            listCounter++;
+            TemplatesAttached.Add(Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(-25.5f, 0, 0), Quaternion.identity));
 
         }
         if (!Physics2D.BoxCast(transform.position + new Vector3(-25.5f, -25.5f, 0), new Vector2(10f, 10f), 0f, Vector2.down, 10f, levelLayer))
         {
-            Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(-25.5f, -25.5f, 0), Quaternion.identity);
+            listCounter++;
+            TemplatesAttached.Add(Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(-25.5f, -25.5f, 0), Quaternion.identity));
 
         }
         if (!Physics2D.BoxCast(transform.position + new Vector3(-25.5f, 25.5f, 0), new Vector2(10f, 10f), 0f, Vector2.down, 10f, levelLayer))
         {
-            Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(-25.5f, 25.5f, 0), Quaternion.identity);
+            listCounter++;
+            TemplatesAttached.Add(Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(-25.5f, 25.5f, 0), Quaternion.identity));
 
         }
         if (!Physics2D.BoxCast(transform.position + new Vector3(0, 25.5f, 0), new Vector2(10f, 10f), 0f, Vector2.down, 10f, levelLayer))
         {
-            Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(0, 25.5f, 0), Quaternion.identity);
+            listCounter++;
+            TemplatesAttached.Add(Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(0, 25.5f, 0), Quaternion.identity));
 
         }
         if (!Physics2D.BoxCast(transform.position + new Vector3(0, -25.5f, 0), new Vector2(10f, 10f), 0f, Vector2.down, 10f, levelLayer))
         {
-            Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(0, -25.5f, 0), Quaternion.identity);
+            listCounter++;
+            TemplatesAttached.Add(Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(0, -25.5f, 0), Quaternion.identity));
 
         }
 
@@ -130,6 +141,22 @@ public class TemplateSpawner : MonoBehaviour
 
 
 
+    }
+    void Despawn() {
+        for (int i = 0; i < listCounter-1; i++) {
+            if (TemplatesAttached != null)
+            {
+
+                if (TemplatesAttached[i] != null)
+                {
+                    Destroy(TemplatesAttached[i]);
+                }
+            }
+            else { }
+           
+        
+        }
+    
     }
     private void OnDrawGizmosSelected()
     {
