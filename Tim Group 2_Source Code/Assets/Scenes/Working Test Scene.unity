@@ -231,6 +231,14 @@ PrefabInstance:
       propertyPath: m_Parameters.colorGradient.key1.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3662495749741047930, guid: 3ad9a7581813f41478c4cfaa3fa8fa2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662495750161836888, guid: 3ad9a7581813f41478c4cfaa3fa8fa2a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2066567560}
     - target: {fileID: 3662495750161836888, guid: 3ad9a7581813f41478c4cfaa3fa8fa2a, type: 3}
       propertyPath: pauseButton
       value: 
@@ -1114,6 +1122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c39d83e187b4d4a4aa85203da02bc26f, type: 3}
+--- !u!1 &2066567560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3662495750161836890, guid: 3ad9a7581813f41478c4cfaa3fa8fa2a, type: 3}
+  m_PrefabInstance: {fileID: 400315687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6959458173566606015
 PrefabInstance:
   m_ObjectHideFlags: 0
