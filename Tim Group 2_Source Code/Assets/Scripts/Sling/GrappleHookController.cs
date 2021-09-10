@@ -138,7 +138,7 @@ public class GrappleHookController : MonoBehaviour
             }
             else
             {
-                UI_SceneManager.showTut = true;
+                //UI_SceneManager.showTut = true;
 
                 PlayerPrefs.SetInt("TutPlayed", 1);
             }
