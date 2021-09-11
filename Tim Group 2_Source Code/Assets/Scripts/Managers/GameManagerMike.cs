@@ -50,21 +50,20 @@ public class GameManagerMike : MonoBehaviour
         isPause = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-
-        Debug.Log(Random.Range(0, 4));
-
         currentScoreText.text = GrappleHookController.score.ToString("0");
 
         if (PlayerPrefs.GetInt("HighScore") < GrappleHookController.score)
         {
-            PlayerPrefs.SetInt("HighScore", GrappleHookController.score);
-            highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString("0");
-            pauseHighScoreText.text = PlayerPrefs.GetInt("HighScore").ToString("0");
+            highScoreText.text = GrappleHookController.score.ToString("0");
+            pauseHighScoreText.text = GrappleHookController.score.ToString("0");
         }
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             OnPause();
@@ -178,11 +177,13 @@ public class GameManagerMike : MonoBehaviour
 
     public void LoadNewScene(string sceneName)
     {
+        PlayerPrefs.SetInt("HighScore", GrappleHookController.score);
         SceneManager.LoadScene(sceneName);
     }
 
     public void OnQuit()
     {
+        PlayerPrefs.SetInt("HighScore", GrappleHookController.score);
         Application.Quit();
     }
 }
