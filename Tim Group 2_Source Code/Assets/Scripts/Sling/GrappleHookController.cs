@@ -61,6 +61,8 @@ public class GrappleHookController : MonoBehaviour
     void Awake ()
     {
 
+        Cursor.lockState = CursorLockMode.Confined;
+
         keyboardOnly = false;
 
         //Variable Declarations
