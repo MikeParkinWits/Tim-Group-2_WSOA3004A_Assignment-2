@@ -28,7 +28,7 @@ public class TemplateSpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Physics2D.BoxCast(transform.position , new Vector2(20f, 20f), 0f, Vector2.zero,20f, playerLayer)) {
+        if (Physics2D.BoxCast(transform.position , new Vector2(24f, 24f), 0f, Vector2.zero,24f, playerLayer)) {
 
             LevelSpawn();
         }
