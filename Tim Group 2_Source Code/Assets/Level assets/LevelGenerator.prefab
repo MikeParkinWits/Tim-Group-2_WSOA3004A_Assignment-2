@@ -48,24 +48,32 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   objects:
-  - {fileID: 2473012234661613887, guid: b6a1b3f61f5c0f34da51dbab622f0da2, type: 3}
-  - {fileID: 2473012234661613887, guid: b6a1b3f61f5c0f34da51dbab622f0da2, type: 3}
   - {fileID: 2473012234661613887, guid: 1dbfe2f536d330b468aa419b417d1a80, type: 3}
+  - {fileID: 2473012234661613887, guid: 1dbfe2f536d330b468aa419b417d1a80, type: 3}
+  - {fileID: 2473012234661613887, guid: b6a1b3f61f5c0f34da51dbab622f0da2, type: 3}
+  - {fileID: 2473012234661613887, guid: b6a1b3f61f5c0f34da51dbab622f0da2, type: 3}
   - {fileID: 2473012234661613887, guid: 80cc1dd7af3d8114ea0a8f7db0d36be9, type: 3}
+  - {fileID: 2473012234661613887, guid: 80cc1dd7af3d8114ea0a8f7db0d36be9, type: 3}
+  - {fileID: 2473012234661613887, guid: af3dfd43088b1dc48be911f6423b3ee3, type: 3}
+  - {fileID: 2473012234661613887, guid: af3dfd43088b1dc48be911f6423b3ee3, type: 3}
   - {fileID: 2473012234661613887, guid: 4a7b484e53451594bac604a6b11f6ce5, type: 3}
   - {fileID: 2473012234661613887, guid: 563ec2f160ded514fa71902bbe28d54c, type: 3}
   - {fileID: 2473012234661613887, guid: ce3647436fa4ac14dbb9335aac512598, type: 3}
-  - {fileID: 4720311010369194243, guid: 0d0138026bb3eaf4187ae55423400b52, type: 3}
-  - {fileID: 2473012234661613887, guid: 1dbfe2f536d330b468aa419b417d1a80, type: 3}
-  - {fileID: 2473012234661613887, guid: 80cc1dd7af3d8114ea0a8f7db0d36be9, type: 3}
   - {fileID: 2473012234661613887, guid: ce3647436fa4ac14dbb9335aac512598, type: 3}
-  - {fileID: 4720311010369194243, guid: 0d0138026bb3eaf4187ae55423400b52, type: 3}
+  - {fileID: 2473012234661613887, guid: b4ac72c91cbc605488eddd02fd1557aa, type: 3}
+  - {fileID: 2473012234661613887, guid: b4ac72c91cbc605488eddd02fd1557aa, type: 3}
+  - {fileID: 2473012234661613887, guid: 55cdf085ff653434ab37ef6027a6c0d3, type: 3}
+  - {fileID: 2473012234661613887, guid: 55cdf085ff653434ab37ef6027a6c0d3, type: 3}
+  - {fileID: 2473012234661613887, guid: 757d6d52448abf54a91994b320b6372a, type: 3}
+  - {fileID: 2473012234661613887, guid: 757d6d52448abf54a91994b320b6372a, type: 3}
   Templates:
   - {fileID: 3021820601962476401}
   playerObject: {fileID: 0}
   levelLayer:
     serializedVersion: 2
     m_Bits: 128
+  listCounter: 0
+  TemplatesAttached: []
 --- !u!61 &2075858275
 BoxCollider2D:
   m_ObjectHideFlags: 0
