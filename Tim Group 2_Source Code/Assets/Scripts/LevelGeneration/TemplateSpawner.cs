@@ -32,7 +32,7 @@ public class TemplateSpawner : MonoBehaviour
 
             LevelSpawn();
         }
-      //  Debug.Log(Vector3.Distance(transform.position, playerObject.transform.position));
+      
         if (Vector3.Distance(transform.position,playerObject.transform.position)>100) {
            // Despawn();
             Destroy(this.gameObject);
@@ -40,55 +40,12 @@ public class TemplateSpawner : MonoBehaviour
             
         }
     }
-   // Physics.CheckSphere(transform.position + sightRangeOffset, sightRange, playerLayer);
+   
 
 
     void LevelSpawn() {
         //distances between centres is 25.5 x and y
-     //   Debug.Log(Physics.CheckSphere(transform.position + new Vector3(25.5f, 0, 0), 1f, levelLayer, QueryTriggerInteraction.Collide));
-
-        //!Physics2D.BoxCast(transform.position + new Vector3(25.5f, 0, 0), new Vector2(2f, 2f), 0f, Vector2.down, 1f, levelLayer)
-      /*  if (!Physics.CheckSphere(transform.position + new Vector3(25.5f, 0, 0), 1f, levelLayer, QueryTriggerInteraction.Collide))
-           
-        {
-            Instantiate(Templates[Random.Range(0, Templates.Length-1)], transform.position + new Vector3(25.5f, 0, 0), Quaternion.identity);
-        }
-
-        if (!Physics.CheckSphere(transform.position + new Vector3(25.5f, 25.5f, 0), 1f, levelLayer, QueryTriggerInteraction.Collide))
-        {
-            Instantiate(Templates[Random.Range(0, Templates.Length-1)], transform.position + new Vector3(25.5f, 25.5f, 0), Quaternion.identity);
-        }
-
-        if (!Physics.CheckSphere(transform.position + new Vector3(25.5f, -25.5f, 0), 1f, levelLayer, QueryTriggerInteraction.Collide))
-        {
-            Instantiate(Templates[Random.Range(0, Templates.Length-1)], transform.position + new Vector3(25.5f, -25.5f, 0), Quaternion.identity);
-        }
-
-        if (!Physics.CheckSphere(transform.position + new Vector3(-25.5f, 0, 0), 1f, levelLayer, QueryTriggerInteraction.Collide))
-        {
-            Instantiate(Templates[Random.Range(0, Templates.Length-1)], transform.position + new Vector3(-25.5f, 0, 0), Quaternion.identity);
-        }
-
-        if (!Physics.CheckSphere(transform.position + new Vector3(-25.5f, -25.5f, 0), 1f, levelLayer, QueryTriggerInteraction.Collide))
-        {
-            Instantiate(Templates[Random.Range(0, Templates.Length-1)], transform.position + new Vector3(-25.5f, -25.5f, 0), Quaternion.identity);
-        }
-
-        if (!Physics.CheckSphere(transform.position + new Vector3(-25.5f, 25.5f, 0), 1f, levelLayer, QueryTriggerInteraction.Collide))
-        {
-            Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(-25.5f, 25.5f, 0), Quaternion.identity);
-        }
-
-        if (!Physics.CheckSphere(transform.position + new Vector3(0, 25.5f, 0), 1f, levelLayer, QueryTriggerInteraction.Collide))
-        {
-            Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(0, 25.5f, 0), Quaternion.identity);
-        }
-
-        if (!Physics.CheckSphere(transform.position + new Vector3(0, -25.5f, 0), 1f, levelLayer, QueryTriggerInteraction.Collide))
-        {
-            Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(0, 25.5f, 0), Quaternion.identity);
-        }
-      */
+   
         if (!Physics2D.BoxCast(transform.position + new Vector3(25.5f, 0, 0), new Vector2(10f, 10f), 0f, Vector2.down, 10f, levelLayer))
         {
             TemplatesAttached.Add(Instantiate(Templates[Random.Range(0, Templates.Length - 1)], transform.position + new Vector3(25.5f, 0, 0), Quaternion.identity));

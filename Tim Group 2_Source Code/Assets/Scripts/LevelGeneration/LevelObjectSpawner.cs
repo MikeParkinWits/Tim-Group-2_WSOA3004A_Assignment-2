@@ -23,8 +23,7 @@ public class LevelObjectSpawner : MonoBehaviour
             newTemp.transform.parent = this.transform;
         }
   
-       // playerObject = GameObject.FindGameObjectWithTag("Player");
-       
+      
     }
 
     // Update is called once per frame
