@@ -52,13 +52,7 @@ public class GameManagerMike : MonoBehaviour
 
     private void FixedUpdate()
     {
-        currentScoreText.text = GrappleHookController.score.ToString("0");
 
-        if (PlayerPrefs.GetInt("HighScore") < GrappleHookController.score)
-        {
-            highScoreText.text = GrappleHookController.score.ToString("0");
-            pauseHighScoreText.text = GrappleHookController.score.ToString("0");
-        }
     }
 
     // Update is called once per frame
@@ -76,6 +70,14 @@ public class GameManagerMike : MonoBehaviour
         else
         {
             timerScreen.SetActive(false);
+        }
+
+        currentScoreText.text = GrappleHookController.score.ToString("0");
+
+        if (PlayerPrefs.GetInt("HighScore") < GrappleHookController.score)
+        {
+            highScoreText.text = GrappleHookController.score.ToString("0");
+            pauseHighScoreText.text = GrappleHookController.score.ToString("0");
         }
     }
 
