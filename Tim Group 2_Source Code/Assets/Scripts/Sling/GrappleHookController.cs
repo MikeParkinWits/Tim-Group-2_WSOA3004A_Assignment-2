@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class GrappleHookController : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class GrappleHookController : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float gravityScale = 0.75f;
     public Rigidbody2D playerRB;
+    public Animator playerAnim;
+    public Animator UIAnim;
     private Transform dirIndicator;
     private SpriteRenderer dirIndicatorSprite;
     private Vector2 playerPos;
@@ -57,6 +60,8 @@ public class GrappleHookController : MonoBehaviour
     public Button pauseButton;
 
     public static int score;
+
+    private bool playAnim = true;
 
     void Awake ()
     {
@@ -526,5 +531,20 @@ public class GrappleHookController : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", score);
         }
         score = 0;
+
+        if (playAnim)
+        {
+            playerAnim.Play("Collide");
+            UIAnim.Play("Collide UI");
+
+            StartCoroutine(Reset());
+        }
+    }
+
+    private IEnumerator Reset()
+    {
+        playAnim = false;
+        yield return new WaitForSeconds(0.5f);
+        playAnim = true;
     }
 }
