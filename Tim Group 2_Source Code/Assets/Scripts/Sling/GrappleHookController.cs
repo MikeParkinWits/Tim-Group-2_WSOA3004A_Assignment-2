@@ -63,6 +63,8 @@ public class GrappleHookController : MonoBehaviour
 
     private bool playAnim = true;
 
+    public static bool highScoreAudioPlayed = false;
+
     void Awake ()
     {
 
@@ -525,6 +527,8 @@ public class GrappleHookController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         AudioManager.bounceAudio.Play();
+
+        GrappleHookController.highScoreAudioPlayed = false;
 
         if (PlayerPrefs.GetInt("HighScore") < score)
         {

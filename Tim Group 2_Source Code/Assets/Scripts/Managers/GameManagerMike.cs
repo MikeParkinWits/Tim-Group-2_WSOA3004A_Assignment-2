@@ -78,6 +78,13 @@ public class GameManagerMike : MonoBehaviour
         {
             highScoreText.text = GrappleHookController.score.ToString("0");
             pauseHighScoreText.text = GrappleHookController.score.ToString("0");
+
+            if (!GrappleHookController.highScoreAudioPlayed && GrappleHookController.score != 0)
+            {
+                AudioManager.highScoreAudio.Play();
+
+                GrappleHookController.highScoreAudioPlayed = true;
+            }
         }
     }
 
@@ -179,13 +186,19 @@ public class GameManagerMike : MonoBehaviour
 
     public void LoadNewScene(string sceneName)
     {
-        PlayerPrefs.SetInt("HighScore", GrappleHookController.score);
+        if (PlayerPrefs.GetInt("HighScore") < GrappleHookController.score)
+        {
+            PlayerPrefs.SetInt("HighScore", GrappleHookController.score);
+        }
         SceneManager.LoadScene(sceneName);
     }
 
     public void OnQuit()
     {
-        PlayerPrefs.SetInt("HighScore", GrappleHookController.score);
+        if (PlayerPrefs.GetInt("HighScore") < GrappleHookController.score)
+        {
+            PlayerPrefs.SetInt("HighScore", GrappleHookController.score);
+        }
         Application.Quit();
     }
 }
