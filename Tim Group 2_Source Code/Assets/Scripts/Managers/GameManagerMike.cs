@@ -78,6 +78,10 @@ public class GameManagerMike : MonoBehaviour
         {
             highScoreText.text = GrappleHookController.score.ToString("0");
             pauseHighScoreText.text = GrappleHookController.score.ToString("0");
+            if (GrappleHookController.score == 0)
+            {
+                GrappleHookController.highScoreAudioPlayed = true;
+            }
 
             if (!GrappleHookController.highScoreAudioPlayed && GrappleHookController.score != 0)
             {
