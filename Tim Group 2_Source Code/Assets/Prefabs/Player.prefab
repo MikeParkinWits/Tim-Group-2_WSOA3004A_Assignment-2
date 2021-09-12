@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 3662495750161836881}
   - component: {fileID: 3662495750161836895}
   - component: {fileID: 400315689}
+  - component: {fileID: 2964991384781114389}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -500,6 +501,7 @@ MonoBehaviour:
   facingDirDistanceFromPlayer: 0.25
   gravityScale: 0.4
   playerRB: {fileID: 3662495750161836892}
+  playerAnim: {fileID: 2964991384781114389}
   player: {fileID: 3662495750161836890}
   multiButtonMouseControls: 0
   leftMouseControl: 1
@@ -768,6 +770,25 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!95 &2964991384781114389
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662495750161836890}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e08be7cd3b02c94c88169192605a9b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3662495750411120397
 GameObject:
   m_ObjectHideFlags: 0
