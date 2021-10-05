@@ -36,6 +36,7 @@ public class GameManagerMike : MonoBehaviour
     {
         colour = Random.Range(0, 4);
         highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString("0");
+        pauseHighScoreText.text = PlayerPrefs.GetInt("HighScore").ToString("0");
 
         playerTrailRenderer = GameObject.FindGameObjectWithTag("Player").GetComponent<TrailRenderer>();
 
